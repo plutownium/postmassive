@@ -9,6 +9,8 @@ const massiveSchema = new Schema({
     date: { type: String, required: true },
     viewCount: { type: Number, required: true },
     viewQuota: { type: Number, required: true },
+    // used to organize the poster's timeline. Comes from the User's totalPostsEver field.
+    postNumber: { type: Number, required: true },
     // engagement
     replies: { type: Number, required: true },
     repliesList: { type: [String], required: true }, // is this needed?

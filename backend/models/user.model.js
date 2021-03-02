@@ -14,7 +14,10 @@ const userSchema = new Schema({
     followers: { type: Number, required: true },
     following: { type: Number, required: true },
     DMsAreOpen: { type: Boolean, required: true },
+    // this number goes down if the user deletes a post.
     postCount: { type: Number, required: true },
+    // this number stays as is if the user deletes a post; used to number a user's massives, including replies.
+    totalPostsEver: { type: Number, required: true },
     suspended: { type: Boolean, required: true }, // "finished signup?"
     accountType: { type: String, required: true }, // user, moderator, admin, verified
 });
