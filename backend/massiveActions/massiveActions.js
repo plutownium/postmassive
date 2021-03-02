@@ -12,12 +12,11 @@ module.exports = router;
 
 const db = require("./db");
 
-const user = "/user";
 const massive = "/massive";
-const message = "/message";
 
 // POST a massive to the server
-router.post("/massive/post", (req, res) => {
+// TODO: add auth here
+router.post(massive + "/post", (req, res) => {
     console.log("55555555");
     const user = req.body.user;
     const text = req.body.text;
@@ -42,7 +41,7 @@ router.post("/massive/post", (req, res) => {
 });
 
 // GET all massives from the server
-router.get("/massive/get", (req, res) => {
+router.get(massive + "/get", (req, res) => {
     const filter = {};
     db.Massive.find(filter, function (err, massives) {
         if (err) {
@@ -55,7 +54,7 @@ router.get("/massive/get", (req, res) => {
 });
 
 // GET a user's massives
-router.get("/massive/get/:username", (req, res) => {
+router.get(massive + "/get/:username", (req, res) => {
     const filter = { postedByUser: req.params.username };
     console.log(filter);
     db.Massive.find(filter, function (err, massives) {
@@ -67,3 +66,19 @@ router.get("/massive/get/:username", (req, res) => {
         }
     });
 });
+
+// REPLY to a massive
+router.post(massive + "/reply", (req, res) => {});
+
+// AMPLIFY a massive
+router.post(massive + "/amplify", (req, res) => {});
+
+// QUOTE AMP a massive
+router.post(massive + "/quote", (req, res) => {});
+
+// LIKE a massive
+router.post(massive + "/like", (req, res) => {});
+
+// DELETE a massive (required auth from user)
+// TODO: put user auth here
+router.delete(massive + "/delete", (req, res) => {});

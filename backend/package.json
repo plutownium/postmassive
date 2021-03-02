@@ -15,7 +15,8 @@
     "joi": "^17.3.0",
     "jsonwebtoken": "^8.5.1",
     "mongodb": "^3.6.1",
-    "mongoose": "^5.10.3"
+    "mongoose": "^5.10.3",
+    "mongoose-extend-schema": "^1.0.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.4"
